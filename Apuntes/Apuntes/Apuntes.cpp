@@ -1,8 +1,10 @@
 #include <iostream>
+#include "Utils/ConsoleControl.h"
 #include "TutorialThreads/ThreadTutorial.h"
+
 
 int main()
 {
-	ThreadTutorialTest();
+	ConsoleControl::SetColor(CC::WHITE, CC::CYAN);
 }
 
