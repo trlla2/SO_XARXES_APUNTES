@@ -1,34 +1,24 @@
 #include <iostream>
 
 #include "Utils/ConsoleControl.h"
+#include "InputSytem/InputSystem.h"
 
-#include <functional>
-#include <list>
-
-typedef std::function<int(int, int)> SumaFunction;
-typedef std::list<std::list<int>> ListDeList; // alias del tipo de variable/function
-
-void TestLambasMolonas(SumaFunction funcionMolona)
-{
-	std::cout << "Voy a ejecutar una funciion aaaaaaaaaaa" << std::endl;
-	
-	int number = funcionMolona(5 , 7);
-	
-	std::cout << "ya e ejecutado la function y devuelve: " << number << std::endl;
-}
 
 int main()
 {
-	int c = 30;
+	InputSystem* iS = new InputSystem();
 
-	ListDeList listDeList;
+	InputSystem::KeyBinding* kb = iS->AddListener(K_1, []() {
+		CC::Lock();
+		std::cout << "Pressed 1" << std::endl;
+		CC::Unlock();
+		});
 
-	std::function<int(int,int)> funcionKHaceCosasPeroS1Variable = [c]( int a, int b) {
+	iS->StartListen();
 
-		std::cout << "Esto no se como pero funca" << std::endl;
-		return a + b + c;
-		};
+	while (true)
+	{
 
-	TestLambasMolonas(funcionKHaceCosasPeroS1Variable);
+	}
 }
 
