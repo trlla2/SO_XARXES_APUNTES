@@ -126,12 +126,15 @@
     <ClCompile Include="Apuntes.cpp" />
     <ClCompile Include="InputSytem\InputSystem.cpp" />
     <ClCompile Include="Utils\ConsoleControl.cpp" />
+    <ClCompile Include="Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputSytem\InputSystem.h" />
     <ClInclude Include="InputSytem\InputsConsts.h" />
+    <ClInclude Include="PreguntasYRespuestas\Preguntas.h" />
     <ClInclude Include="Utils\ConsoleControl.h" />
     <ClInclude Include="TutorialThreads\ThreadTutorial.h" />
+    <ClInclude Include="Utils\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
