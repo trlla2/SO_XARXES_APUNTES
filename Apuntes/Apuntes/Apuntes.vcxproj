@@ -124,17 +124,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Apuntes.cpp" />
+    <ClCompile Include="3NodeMap\INodeContent.cpp" />
     <ClCompile Include="InputSytem\InputSystem.cpp" />
     <ClCompile Include="Utils\ConsoleControl.cpp" />
     <ClCompile Include="Utils\Timer.cpp" />
+    <ClCompile Include="3NodeMap\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3NodeMap\INodeContent.h" />
     <ClInclude Include="InputSytem\InputSystem.h" />
     <ClInclude Include="InputSytem\InputsConsts.h" />
     <ClInclude Include="PreguntasYRespuestas\Preguntas.h" />
     <ClInclude Include="Utils\ConsoleControl.h" />
     <ClInclude Include="TutorialThreads\ThreadTutorial.h" />
     <ClInclude Include="Utils\Timer.h" />
+    <ClInclude Include="3NodeMap\Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
