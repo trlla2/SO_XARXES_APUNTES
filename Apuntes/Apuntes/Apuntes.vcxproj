@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,22 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Apuntes.cpp" />
+    <ClCompile Include="dist\jsoncpp.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="3NodeMap\INodeContent.cpp" />
     <ClCompile Include="InputSytem\InputSystem.cpp" />
     <ClCompile Include="3NodeMap\Node.cpp" />
     <ClCompile Include="3NodeMap\NodeMap.cpp" />
+    <ClCompile Include="SnakeGame.cpp" />
+    <ClCompile Include="Snake\Snake.cpp" />
     <ClCompile Include="Utils\ConsoleControl.cpp" />
     <ClCompile Include="Utils\Timer.cpp" />
     <ClCompile Include="3NodeMap\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3NodeMap\INodeContent.h" />
+    <ClInclude Include="dist\json\json-forwards.h" />
+    <ClInclude Include="dist\json\json.h" />
     <ClInclude Include="InputSytem\InputSystem.h" />
     <ClInclude Include="InputSytem\InputsConsts.h" />
     <ClInclude Include="3NodeMap\Node.h" />
     <ClInclude Include="3NodeMap\NodeMap.h" />
     <ClInclude Include="PreguntasYRespuestas\Preguntas.h" />
+    <ClInclude Include="Snake\Snake.h" />
     <ClInclude Include="Utils\ConsoleControl.h" />
     <ClInclude Include="TutorialThreads\ThreadTutorial.h" />
     <ClInclude Include="Utils\Timer.h" />
