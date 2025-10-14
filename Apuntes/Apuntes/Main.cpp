@@ -6,51 +6,55 @@
 #include "Utils/ConsoleControl.h"
 #include "3NodeMap/NodeMap.h"
 #include "InputSytem/InputSystem.h"
-
-class Player // : Codeable -> Serializable + Desearizable
-{
-public:
-	int life = 0;
-	std::string name = "Test Plater";
-	unsigned int coins = 0;
-
-	Player(){}
-	~Player(){}
-
-	void Decode(Json::Value json) // DesSerialize
-	{
-		life = json["life"].asInt();
-		name = json["name"].asString();
-		coins = json["coins"].asUInt();
-
-	}
-
-	Json::Value Encode() // Serialize 
-	{
-		Json::Value json;
-
-		json["life"] = life;
-		json["name"] = name;
-		json["coins"] = coins;
-
-
-		return json;
-	}
-};
-
+#include "json/ICodable.h"
+#include "json/Banana.h"
+#include "json/Manzana.h"
 
 int main()
 {
-	Player* player = new Player();
-	player->coins = 3;
-	player->life = 19;
-	player->name = "Lmao";
+	ICodable::SaveDecodeProcces<Banana>();
+	ICodable::SaveDecodeProcces<Manzana>();
 
-	Json::Value newJson;
+	std::vector<Fruta*> frutas
+	{
+		new Banana(),
+		new Banana(),
+		new Manzana(),
+		new Manzana()
+	};
 
-	newJson["Player"] = player->Encode();
+	frutas[1]->semillas = 10000;
 
-	std::ostream* jsonFile = new std::ofstream 
+	Json::Value jsonArray = Json::Value(Json::arrayValue);
+
+	for(Fruta* fruta : frutas)
+	{
+		jsonArray.append(fruta->Code());
+	}
+
+	std::ofstream jsonWriterFile = std::ofstream("FrutasTest.json", std::ifstream::binary);
+
+	if (!jsonWriterFile.fail()) 
+	{
+		jsonWriterFile << jsonArray;
+		jsonWriterFile.close();
+	}
+
+	std::ifstream jsonReadFile = std::ifstream("FrutasTest.json", std::ifstream::binary);
+	std::vector<Fruta*> readFrutas;
+
+	if (!jsonReadFile.fail()) 
+	{
+		Json::Value readedJson;
+
+		jsonReadFile >> readedJson;
+
+		for (Json::Value value : readedJson)
+		{
+			Fruta* f = ICodable::FromJson<Fruta>(value);
+			readFrutas.push_back(f);
+		}
+	}
 
 	while (true)
 	{

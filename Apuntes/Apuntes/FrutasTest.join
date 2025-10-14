@@ -1,0 +1,26 @@
+[
+	{
+		"" : "class Banana",
+		"bananidad" : 0,
+		"hexDelColor" : "",
+		"semillas" : 0
+	},
+	{
+		"" : "class Banana",
+		"bananidad" : 0,
+		"hexDelColor" : "",
+		"semillas" : 10000
+	},
+	{
+		"" : "class Manzana",
+		"hexDelColor" : "",
+		"manzanidad" : 0,
+		"semillas" : 0
+	},
+	{
+		"" : "class Manzana",
+		"hexDelColor" : "",
+		"manzanidad" : 0,
+		"semillas" : 0
+	}
+]
